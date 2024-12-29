@@ -10,6 +10,7 @@ import { NgIf } from '@angular/common';
 export class AppComponent {
   title = 'primer-proyecto';
   isPopupVisible = false; // Controla la visibilidad del popup
+  istagvisible = false
 
   // Muestra el popup
   openPopup() {
@@ -23,17 +24,17 @@ export class AppComponent {
 
   // Abre WhatsApp
   openWhatsApp() {
-    window.open('https://wa.me/123456789', '_blank'); // Cambia el número por el tuyo
+    window.open('https://wa.me/3884476453', '_blank'); // Cambia el número por el tuyo
   }
 
   // Abre Gmail
   sendEmail() {
-    window.location.href = 'mailto:tuemail@gmail.com'; // Cambia el correo por el tuyo
+    window.location.href = 'mailto:alquimialavanderia2025@gmail.com'; // Cambia el correo por el tuyo
   }
 
   // Abre Instagram
   openInstagram() {
-    window.open('https://instagram.com/tuusuario', '_blank'); // Cambia el usuario por el tuyo
+    window.open('https://instagram.com/alquimialavanderia', '_blank'); // Cambia el usuario por el tuyo
   }
 
   scrollToAbout() {
@@ -46,5 +47,18 @@ export class AppComponent {
 
     document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
 
+  }
+
+  openclosetag() {
+    if (this.istagvisible === true) {
+        // abrir tag
+        this.istagvisible = false;
+        console.log("si")
+    } else {
+        // cerrar tag
+        this.istagvisible = true;
+        console.log("no")
+
+    }
   }
 }

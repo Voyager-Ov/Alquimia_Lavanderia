@@ -1,10 +1,9 @@
 <body>
-
-    <!-- Header -->
-    <header>
+    <!-- Header pantalla grande mas de 500 px-->
+    <header class="grande">
         <div class="container">
-            <div class="logo">Alquimia Lavandería</div>
-            <nav>
+            <div  class="logo-icon">Alquimia Lavandería</div>
+            <nav class="links">
                 <ul>
                     <li>
                         <button class="custom-btn" (click)="scrollToAbout()">Sobre Nosotros</button>
@@ -21,13 +20,40 @@
         </div>
     </header>
 
+    <!-- Header pantalla grande menos de 500 px-->
+    <header class="chica">
+        <div class="container">
+            <div  class="logo-icon">Alquimia Lavandería</div>
+            <nav class="links">
+                <button class="navegacion" (click)="openclosetag()">
+                    <i class="bi bi-stack"></i>
+                </button>
+                <div *ngIf="istagvisible" class="tag">
+                    <ul>
+                        <li>
+                            <button class="custom-btn" (click)="scrollToAbout()">Sobre Nosotros</button>
+                        </li>
+                        <li>
+                            <button class="custom-btn" (click)="scrollToServices()">Servicios</button>
+                        </li>
+                        <li>
+                            <!-- Botón para abrir el popup -->
+                            <button class="custom-btn" (click)="openPopup()">Contáctanos</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <!-- Popup -->
     <div *ngIf="isPopupVisible" class="popup">
         <div class="popup-content">
             <h2>Contáctanos</h2>
             <button class="btn-success" (click)="openWhatsApp()">WhatsApp</button>
             <button class="btn-danger" (click)="sendEmail()">Gmail</button>
-            <button class="btn-warning" (click)="openInstagram()">Instagram</button>
+            <button class="btn-warning" (click)="openInstagram()">
+                <i class="bi bi-instagram"> </i> Instagram</button>
             <button class="btn-secondary" (click)="closePopup()">Cerrar</button>
         </div>
     </div>
