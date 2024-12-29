@@ -1,0 +1,86 @@
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">Alquimia Lavandería</div>
+            <nav>
+                <ul>
+                    <li>
+                        <button class="custom-btn" (click)="scrollToAbout()">Sobre Nosotros</button>
+                    </li>
+                    <li>
+                        <button class="custom-btn" (click)="scrollToServices()">Servicios</button>
+                    </li>
+                    <li>
+                        <!-- Botón para abrir el popup -->
+                        <button class="custom-btn" (click)="openPopup()">Contáctanos</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Popup -->
+    <div *ngIf="isPopupVisible" class="popup">
+        <div class="popup-content">
+            <h2>Contáctanos</h2>
+            <button class="btn-success" (click)="openWhatsApp()">WhatsApp</button>
+            <button class="btn-danger" (click)="sendEmail()">Gmail</button>
+            <button class="btn-warning" (click)="openInstagram()">Instagram</button>
+            <button class="btn-secondary" (click)="closePopup()">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Transformamos tu ropa y tu energía</h1>
+        <p>Descubre la conexión entre el cuidado de tus prendas y tu bienestar. Una experiencia única para ti y tu ropa.</p>
+        <button class="cta">reservar ahora</button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2>Sobre Nosotros</h2>
+                    <p>En Alquimia Lavandería cuidamos de tus prendas como cuidamos de ti. Nuestro proceso combina limpieza profesional con energías positivas para brindar una experiencia única.</p>
+                </div>
+                <div class="col">
+                    <img src="about-image.jpg" alt="Sobre Nosotros" class="responsive-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="row">
+                <div class="col">
+                    <h3>Limpieza y Cuidado</h3>
+                    <p>Ofrecemos limpieza y cuidado profesional para todo tipo de prendas.</p>
+                </div>
+                <div class="col">
+                    <h3>Tratamientos Especiales</h3>
+                    <p>Tratamientos especiales para prendas delicadas y de alta calidad.</p>
+                </div>
+                <div class="col">
+                    <h3>Servicios de Tintorería</h3>
+                    <p>Servicios de tintorería para mantener tus prendas en perfecto estado.</p>
+                </div>
+                <div class="col">
+                    <h3>Rituales de Purificación</h3>
+                    <p>Rituales de purificación para tus prendas, llenándolas de energías positivas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Alquimia Lavandería. Todos los derechos reservados.</p>
+    </footer>
+</body>
