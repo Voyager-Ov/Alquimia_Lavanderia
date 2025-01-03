@@ -53,12 +53,9 @@ export class AppComponent {
     if (this.istagvisible === true) {
         // abrir tag
         this.istagvisible = false;
-        console.log("si")
     } else {
         // cerrar tag
         this.istagvisible = true;
-        console.log("no")
-
     }
   }
 }
