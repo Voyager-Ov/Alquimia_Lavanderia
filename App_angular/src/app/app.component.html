@@ -1,33 +1,34 @@
 <body>
-    <!-- Header pantalla grande mas de 500 px-->
-    <header class="grande">
-        <div class="container">
-            <div  class="logo-icon">Alquimia Lavandería</div>
-            <nav class="links">
-                <ul>
-                    <li>
-                        <button class="custom-btn" (click)="scrollToAbout()">Sobre Nosotros</button>
-                    </li>
-                    <li>
-                        <button class="custom-btn" (click)="scrollToServices()">Servicios</button>
-                    </li>
-                    <li>
-                        <!-- Botón para abrir el popup -->
-                        <button class="custom-btn" (click)="openPopup()">Contáctanos</button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <i class="animacion"></i>   
+    <!-- Header pantalla mas de 500 px-->
+    <div class="header-conteiner">
+        <header class="header">
 
-    <!-- Header pantalla grande menos de 500 px-->
-    <header class="chica">
-        <div class="container">
-            <div class="logo-icon" *ngIf="!istagvisible">Alquimia Lavandería</div>
-            <!-- Botón para abrir el popup -->
-            <button class="custom-btn" (click)="openPopup()">Contáctanos</button>
-        </div>
-    </header>
+            <div  class="logo">
+                <div class="logo-icon"></div>
+                Alquimia Lavandería
+            </div>
+            <nav>
+                <button class="custom-btn" id="disable" (click)="scrollToAbout()">Sobre Nosotros</button>
+                <button class="custom-btn" id="disable" (click)="scrollToServices()">Servicios</button>
+                <!-- Botón para abrir el popup -->
+                <button class="custom-btn" (click)="openPopup()">Contáctanos</button>
+            </nav>
+        </header>
+    </div>
+            
+
+    <!-- Header pantalla menos de 500 px
+    <div class="header-conteiner-chico">
+        <header class="header">
+            <div  class="logo-icon">Alquimia Lavandería</div>
+            <nav>
+                 Botón para abrir el popup 
+                <button class="custom-btn" (click)="openPopup()">Contáctanos</button>
+            </nav>
+        </header>
+    </div>
+-->
 
     <!-- Popup -->
     <div *ngIf="isPopupVisible" class="popup">

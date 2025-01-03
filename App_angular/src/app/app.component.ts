@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { gsap } from 'gsap';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   imports: [NgIf]
+  
 })
 export class AppComponent {
   title = 'primer-proyecto';
