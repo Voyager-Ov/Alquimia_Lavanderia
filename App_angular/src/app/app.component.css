@@ -90,6 +90,74 @@ nav .custom-btn:focus {
 }
 
 
+/* Estilos para el overlay del popup */
+.popup-overlay {
+    color: rgb(217, 221, 193);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    backdrop-filter: blur(10px); /* Difuminado del fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que el popup esté por encima de otros elementos */
+}
+
+/* Estilos para el contenido del popup */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    background: #5E8A5A;
+    padding: 2% 10% 2% 10%; /* Añade espacio alrededor del contenido */
+    border-radius: 30px;
+    position: relative;
+    z-index: 1001; /* Asegura que el contenido del popup esté por encima del overlay */
+}
+
+.popup-content h2 {
+    color: white; /* Color del texto */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+}
+
+
+.popup-content button {
+    padding: 10px 20px; /* Añade espacio dentro del botón */
+    border: none; /* Sin borde */
+    font-size: 150%;
+    border-radius: 15px; /* Bordes redondeados */
+    margin: 10px; /* Añade espacio entre los botones */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+}
+
+
+#wapp {
+    background-color: #25d366; /* Color de fondo */
+    color: white; /* Color del texto */
+}
+
+#email {
+    background-color: #ea4335; /* Color de fondo */
+    color: white; /* Color del texto */
+}
+
+#ig {
+    color: white; /* Color del texto */
+    background-image: url("/assets/images/ig.jpg"); /* Ruta de la imagen de Instagram */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-position:center; /* Posición de la imagen */
+    padding-left: 40px; /* Espacio a la izquierda para la imagen */
+    background-size: 100%;
+}
+
 .hero {
     margin: 2% auto 2% auto; /* Añade espacio entre el header y el contenido */
     display: flex;

@@ -17,14 +17,24 @@
     </div>
             
     <!-- Popup -->
-    <div *ngIf="isPopupVisible" class="popup">
-        <div class="popup-content">
+    <div *ngIf="isPopupVisible" class="popup-overlay" (click)="closePopup()">
+        <div class="popup-content" (click)="$event.stopPropagation()">
             <h2>Contáctanos</h2>
-            <button class="btn-success" (click)="openWhatsApp()">WhatsApp</button>
-            <button class="btn-danger" (click)="sendEmail()">Gmail</button>
-            <button class="btn-warning" (click)="openInstagram()">
-                <i class="bi bi-instagram"> </i> Instagram</button>
-            <button class="btn-secondary" (click)="closePopup()">Cerrar</button>
+            <button id="wapp" (click)="openWhatsApp()">
+                <i class="bi bi-whatsapp"></i>
+                WhatsApp
+            </button>
+            <button id="email" (click)="sendEmail()">
+                <i class="bi bi-google"></i>
+                Gmail
+            </button>
+            <button id="ig" (click)="openInstagram()">
+                <i class="bi bi-instagram"> </i>
+                 Instagram
+            </button>
+            <button class="btn-secondary" (click)="closePopup()">
+                Cerrar
+            </button>
         </div>
     </div>
 
