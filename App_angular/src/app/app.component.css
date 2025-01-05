@@ -1,13 +1,14 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh; /* Altura completa de la ventana */
+    height: 100%; /* Altura completa de la ventana */
     background-image: url('pc.svg');
     background-size: cover; /* Asegura que ocupe todo el fondo */
-    background-repeat: repeat; /* Repite la imagen de fondo */
+    background-repeat: no-repeat; /* Repite la imagen de fondo */
     background-position: center; /* Centra la imagen */
     background-attachment: fixed; /* Fija la imagen de fondo para que no se mueva */
     position: relative;
+    width: 100%;
 }
 
 /* Contenedor del header */
@@ -18,9 +19,9 @@ body {
     height: 10%; /* Altura del header */
     margin-right: 5%;
     margin-left: 5%;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
 .header {
@@ -31,30 +32,162 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     margin-right: auto; /* Empuja el logo a la izquierda */
     margin-left: 5%; /* Añade espacio entre el logo y el borde izquierdo */
+    margin-bottom: 1%;
+    margin-top: 1%;
 }
 
 .logo-icon {
-    background-image: url("logo_500x500-removebg-preview.png");
-    wight: 50px;
-    height: 50px;
+    width: 50px; /* Tamaño del logo */
+    height: 50px; /* Tamaño del logo */
+    margin-right: 10px; /* Añade espacio entre el logo y el texto */
+}
+
+.logo-text {
+    font-size: 150%; /* Tamaño del texto */
+    padding: 10px;
+    
 }
 
 nav {
     display: flex;
     gap: 10px; /* Añade espacio entre los botones */
-    margin: 1%;
+    margin: 3%;
+}
+/* Estilos para los botones custom-btn */
+nav .custom-btn {
+    background-color: #005e2f83; /* Color de fondo */
+    color: rgba(217, 221, 193); /* Color del texto */
+    padding: 10px 20px; /* Añade espacio dentro del botón */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para el color de fondo y la transformación */
+    font-size: 1rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+/* Estilos para el estado hover */
+nav .custom-btn:hover {
+    background-color: #426940; /* Color de fondo al pasar el cursor */
+    transform: translateY(-5px); /* Eleva el botón ligeramente */
+}
+
+/* Estilos para el estado activo */
+nav .custom-btn:active {
+    background-color: #5E8A5A; /* Color de fondo al hacer clic */
+    transform: translateY(0); /* Restaura la posición del botón */
+}
+
+/* Estilos para el estado enfocado */
+nav .custom-btn:focus {
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+    box-shadow: 0 0 0 3px rgba(139, 197, 133, 0.5); /* Añade un borde de enfoque personalizado */
+}
+
+
+.hero {
+    margin: 2% auto 2% auto; /* Añade espacio entre el header y el contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.hero-content {
+    text-align: center; /* Alinea el texto al centro */
+}
+
+div .custom-btn {
+    background-color: #005e2f83; /* Color de fondo */
+    color: rgba(217, 221, 193); /* Color del texto */
+    padding: 10px 20px; /* Añade espacio dentro del botón */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para el color de fondo y la transformación */
+    font-size: 1rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+
+/* Estilos para las islas en la sección About */
+.abaut-container {
+    display: flex;
+    flex-wrap: wrap; /* Adaptable a diferentes tamaños de pantalla */
+    justify-content: space-around; /* Espaciado uniforme */
+    gap: 2rem; /* Espacio entre islas */
+    margin: 2rem auto; /* Centrado con márgenes superior e inferior */
+    max-width: 1200px; /* Anchura máxima */
+    padding: 1rem;
+}
+
+.abaut-text, .abaut-presentacion, .map-container {
+    flex: 1 1 calc(50% - 2rem); /* Ajuste al 50% del contenedor con margen */
+    background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Difuminado del fondo */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    padding: 2rem; /* Espaciado interno */
+    color: #333; /* Color de texto */
+    text-align: center; /* Texto centrado */
+}
+
+.abaut-text h2, .abaut-presentacion h5 {
+    margin-bottom: 1rem;
+    color: #2b502c; /* Color destacado */
+    font-size: 2rem;
+}
+
+.abaut-text p {
+    font-size: 150%;
+    line-height: 1.5;
+    color: #444;
+}
+
+.abaut-presentacion img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+.carousel-item img {
+    
+    object-fit: cover; /* Recorta y centra la imagen */
+    object-position: center; /* Centra la imagen */
+    border-radius: 20px; /* Opcional: bordes redondeados */
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    backdrop-filter: blur(5px); /* Efecto borroso */
+    color: white; /* Color del texto */
+    border-radius: 10px; /* Bordes redondeados */
+    text-align: center;
+    font-size: smaller;
+}
+
+
+.map-container h2 {
+    margin-bottom: 2%;
+    color: #2b502c; /* Color destacado */
+    font-size: 200%;
 }
 
 
 
+    /* Media Queries  tablet*/
 
-    /* Media Queries */
-
-  @media (max-width: 768px) {
+  @media (max-width: 800px) {
     body {
       background-image: url(tablet.svg);
+
     }
     .header-conteiner {
         height: 10%;
@@ -68,22 +201,86 @@ nav {
         margin: 20px;
     }
 
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 125%;
+    }
     nav {
         margin-right: 5%;
         gap: 10px;
     }
+
+    .abaut-container {
+        flex-direction: row;
+        gap: 20%;
+    }
+    
+    .abaut-text {
+        font-size: smaller;
+    }
+
+
+
+
   }
+
+
 
   @media (max-width: 576px) {
     body {
       background-image: url(mobile.svg);
+      height: 100%; /* Altura completa de la ventana */
+
     }
     .header-conteiner {
         height: 10%;
+        margin-left: 2%;
+        margin-right: 2%;
     }
     #disable {
         display: none;
     }
+
+    .logo{
+        margin-right: 0;
+    }
+
+    .logo-icon{
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-text {
+        font-size: 125%;
+    }
+
+    nav .custom-btn{
+        padding: 5px 10px;
+        margin: 10px;
+
+    }
+
+    .hero {
+        margin: 5% 5% 5% 5%; /* Añade espacio entre el header y el contenido */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+    }
+
+    .abaut-container {
+        flex-direction: row;
+        gap: 20%;
+    }
+    
+    .abaut-text {
+        font-size: smaller;
+    }
+
   }
 
 
