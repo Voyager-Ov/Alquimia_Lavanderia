@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common'; // Asegúrate de importar esto
-import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
+import { AppComponent } from './app.component'; // Import AppComponent
 
 @NgModule({
   imports: [
     BrowserModule,
-    CommonModule, // Añade CommonModule aquí
+    ReactiveFormsModule,
+    HttpClientModule // Add HttpClientModule to imports array
   ],
   providers: [],
 })
