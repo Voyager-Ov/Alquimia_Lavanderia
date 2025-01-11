@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { gsap } from 'gsap';
 
@@ -10,7 +10,7 @@ import { gsap } from 'gsap';
   
 })
 export class AppComponent {
-  title = 'primer-proyecto';
+  title = 'Alquimia Lavandería';
   isPopupVisible = false; // Controla la visibilidad del popup
   istagvisible = false
 
@@ -74,4 +74,6 @@ openWhatsApp() {
         this.istagvisible = true;
     }
   }
+
+  
 }
