@@ -1,94 +1,98 @@
 body {
+    font-family: 'Questrial', sans-serif;
     margin: 0;
     padding: 0;
     height: 100%; /* Altura completa de la ventana */
     background-image: url('pc.svg');
     background-size: cover; /* Asegura que ocupe todo el fondo */
-    background-repeat: no-repeat; /* Repite la imagen de fondo */
+    background-repeat: no-repeat; /* No repetir la imagen de fondo */
     background-position: center; /* Centra la imagen */
     background-attachment: fixed; /* Fija la imagen de fondo para que no se mueva */
-    position: relative;
     width: 100%;
+    font-size: 120%;
 }
 
 /* Contenedor del header */
 .header-conteiner {
-    display: flex;
-    justify-content: space-between; /* Centra horizontalmente el contenido */
-    align-items: center; /* Centra verticalmente el contenido */
     height: 10%; /* Altura del header */
     margin-right: 5%;
     margin-left: 5%;
     background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(213, 245, 204, 0.2));
     backdrop-filter: blur(10px);
     border-radius: 40px;
 }
 
 .header {
     display: flex;
-    justify-content: center; /* Centra horizontalmente el contenido */
+    justify-content: space-between; /* Espacio entre logo y nav */
     align-items: center; /* Centra verticalmente el contenido */
-    width: 100%; /* Asegura que el header ocupe todo el ancho del contenedor */
+    margin-left: 10px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    margin-right: auto; /* Empuja el logo a la izquierda */
-    margin-left: 5%; /* Añade espacio entre el logo y el borde izquierdo */
-    margin-bottom: 1%;
-    margin-top: 1%;
+    font-size: 180%;
+    margin-left: 10px;
 }
 
 .logo-icon {
-    width: 50px; /* Tamaño del logo */
-    height: 50px; /* Tamaño del logo */
-    margin-right: 10px; /* Añade espacio entre el logo y el texto */
+    width: 100px; /* Tamaño del logo */
+    height: 100px; /* Tamaño del logo */
 }
 
 .logo-text {
-    font-size: 150%; /* Tamaño del texto */
-    padding: 10px;
-    
+    flex-direction: column; /* Coloca "ALQUIMIA" arriba y "lavanderia" abajo */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+#Alquimia {
+    font-size: 160%; /* Tamaño grande para "ALQUIMIA" */
+    margin: 0; /* Elimina el margen */
+}
+
+#lavanderia {
+    font-size: 100%; /* Tamaño más pequeño para "lavanderia" */
+    margin: 0; /* Elimina el margen */
 }
 
 nav {
     display: flex;
     gap: 10px; /* Añade espacio entre los botones */
-    margin: 3%;
+    margin-right: 20px;
 }
+
 /* Estilos para los botones custom-btn */
-nav .custom-btn {
+.custom-btn {
     background-color: #005e2f83; /* Color de fondo */
     color: rgba(217, 221, 193); /* Color del texto */
-    padding: 10px 20px; /* Añade espacio dentro del botón */
     border: none; /* Sin borde */
+    padding: 10px 20px; /* Añade espacio dentro del botón */
     border-radius: 10px; /* Bordes redondeados */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para el color de fondo y la transformación */
-    font-size: 1rem; /* Tamaño de la fuente */
     font-weight: bold; /* Texto en negrita */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }
 
 /* Estilos para el estado hover */
-nav .custom-btn:hover {
-    background-color: #426940; /* Color de fondo al pasar el cursor */
+.custom-btn:hover {
+    background-color: #037e4483; /* Color de fondo al pasar el cursor */
     transform: translateY(-5px); /* Eleva el botón ligeramente */
 }
 
 /* Estilos para el estado activo */
-nav .custom-btn:active {
-    background-color: #5E8A5A; /* Color de fondo al hacer clic */
+.custom-btn:active {
+    background-color: #037e4483; /* Color de fondo al hacer clic */
     transform: translateY(0); /* Restaura la posición del botón */
 }
 
 /* Estilos para el estado enfocado */
-nav .custom-btn:focus {
+.custom-btn:focus {
     outline: none; /* Elimina el borde de enfoque predeterminado */
-    box-shadow: 0 0 0 3px rgba(139, 197, 133, 0.5); /* Añade un borde de enfoque personalizado */
+    box-shadow: 0 0 0 3px #037e4483; /* Añade un borde de enfoque personalizado */
 }
-
 
 /* Estilos para el overlay del popup */
 .popup-overlay {
@@ -104,17 +108,46 @@ nav .custom-btn:focus {
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Asegura que el popup esté por encima de otros elementos */
+    animation: fadeIn 0.5s forwards; /* Animación de desvanecimiento */
+}
+
+.popup-overlay.hide {
+    animation: fadeOut 0.5s forwards; /* Animación de desvanecimiento inverso */
 }
 
 /* Estilos para el contenido del popup */
 .popup-content {
     display: flex;
     flex-direction: column;
-    background: #5E8A5A;
-    padding: 2% 10% 2% 10%; /* Añade espacio alrededor del contenido */
+    background: #5e8a5a7c;
+    padding: 2% 10%; /* Añade espacio alrededor del contenido */
     border-radius: 30px;
     position: relative;
     z-index: 1001; /* Asegura que el contenido del popup esté por encima del overlay */
+    animation: fadeIn 0.5s forwards; /* Animación de desvanecimiento */
+}
+
+.popup-content.hide {
+    animation: fadeOut 0.5s forwards; /* Animación de desvanecimiento inverso */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 .popup-content h2 {
@@ -124,7 +157,6 @@ nav .custom-btn:focus {
     justify-content: center;
     padding: 10%;
 }
-
 
 .popup-content button {
     padding: 10px 20px; /* Añade espacio dentro del botón */
@@ -138,10 +170,19 @@ nav .custom-btn:focus {
     gap: 10px; /* Espacio entre el icono y el texto */
 }
 
-
 #wapp {
     background-color: #25d366; /* Color de fondo */
     color: white; /* Color del texto */
+}
+
+#wapp:hover {
+    background-color: #03ff4fc4; /* Color de fondo al pasar el cursor */
+    transform: translateY(-3px); /* Eleva el botón ligeramente */
+}
+
+#wapp:active {
+    background-color: #03ff4fc4; /* Color de fondo al hacer clic */
+    transform: translateY(0); /* Restaura la posición del botón */
 }
 
 #email {
@@ -149,17 +190,51 @@ nav .custom-btn:focus {
     color: white; /* Color del texto */
 }
 
-#ig {
-    color: white; /* Color del texto */
-    background-image: url("/assets/images/ig.jpg"); /* Ruta de la imagen de Instagram */
-    background-repeat: no-repeat; /* No repetir la imagen */
-    background-position:center; /* Posición de la imagen */
-    padding-left: 40px; /* Espacio a la izquierda para la imagen */
-    background-size: 100%;
+#email:hover {
+    background-color: #f70000; /* Color de fondo al pasar el cursor */
+    transform: translateY(-3px); /* Eleva el botón ligeramente */
 }
 
+#email:active {
+    background-color: #ff4f4ffd; /* Color de fondo al hacer clic */
+    transform: translateY(0); /* Restaura la posición del botón */
+}
+
+#ig {
+    color: white; /* Color del texto */
+    background: linear-gradient(to right, #4b00fa, #833ab4, #c13584, #e1306c, #fd1d1d, #fdfa4b); /* Degradado de colores */
+    padding-left: 40px; /* Espacio a la izquierda para la imagen */
+}
+
+#ig:hover {
+    transform: translateY(-1px); /* Eleva el botón ligeramente */
+    animation: girar-gradiente 6s infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes girar-gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#closePopup {
+    color: white; /* Color del texto */
+    background-color: #ff4f4f; /* Color de fondo */
+}
+#closePopup:hover {
+    background-color: #f70000; /* Color de fondo al pasar el cursor */
+    transform: translateY(-3px); /* Eleva el botón ligeramente */
+}
+/* Estilos para el contenido principal */
 .hero {
-    margin: 2% auto 2% auto; /* Añade espacio entre el header y el contenido */
+    margin: 2% auto; /* Añade espacio entre el header y el contenido */
     display: flex;
     flex-direction: column;
     justify-content: center; /* Centra horizontalmente el contenido */
@@ -169,20 +244,6 @@ nav .custom-btn:focus {
 .hero-content {
     text-align: center; /* Alinea el texto al centro */
 }
-
-div .custom-btn {
-    background-color: #005e2f83; /* Color de fondo */
-    color: rgba(217, 221, 193); /* Color del texto */
-    padding: 10px 20px; /* Añade espacio dentro del botón */
-    border: none; /* Sin borde */
-    border-radius: 10px; /* Bordes redondeados */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para el color de fondo y la transformación */
-    font-size: 1rem; /* Tamaño de la fuente */
-    font-weight: bold; /* Texto en negrita */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
-}
-
 
 /* Estilos para las islas en la sección About */
 .abaut-container {
@@ -213,7 +274,7 @@ div .custom-btn {
 }
 
 .abaut-text p {
-    font-size: 150%;
+    font-size: 120%;
     line-height: 1.5;
     color: #444;
 }
@@ -226,7 +287,6 @@ div .custom-btn {
 }
 
 .carousel-item img {
-    
     object-fit: cover; /* Recorta y centra la imagen */
     object-position: center; /* Centra la imagen */
     border-radius: 20px; /* Opcional: bordes redondeados */
@@ -257,7 +317,7 @@ div .custom-btn {
 }
 
 .map-text {
-    order: 2; 
+    order: 2;
     padding: 2rem; /* Espaciado interno */
     color: #333; /* Color de texto */
     text-align: center; /* Texto centrado */
@@ -266,7 +326,6 @@ div .custom-btn {
 .map {
     order: 1;
     border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
 }
 
 .titulo {
@@ -282,112 +341,148 @@ div .custom-btn {
     text-align: left; /* Alinea el texto a la izquierda */
     color: #444; /* Color del texto */
     margin-bottom: 1rem; /* Espacio debajo del ítem */
-    line-height: 1.5; /* Altura de línea */ 
+    line-height: 1.5; /* Altura de línea */
 }
 
-
-
-
-
-    /* Media Queries  tablet*/
-
-  @media (max-width: 800px) {
+/* Media Queries  tablet */
+@media (max-width: 961px) {
     body {
-      background-image: url(tablet.svg);
-
-    }
-    .header-conteiner {
-        height: 10%;
-    }
-
-    .header {
-        flex-direction: row;
+        background-image: url(tablet.svg);
     }
 
     .logo {
-        margin: 20px;
+        margin: 0;
+        font-size: 130%;
     }
-
     .logo-icon {
-        width: 40px;
-        height: 40px;
+        width: 80px;
+        height: 80px;
     }
 
-    .logo-text {
-        font-size: 125%;
-    }
     nav {
-        margin-right: 5%;
-        gap: 10px;
-    }
+        font-size: 130%;
 
-    .abaut-container {
-        flex-direction: row;
-        gap: 20%;
     }
-    
+    .custom-btn {
+        font-size: 90%;
+        padding: 6px 5px;
+    }
+    .abaut-container {
+        flex-direction: column;
+    }
     .abaut-text {
         font-size: smaller;
     }
-
-
-
-
-  }
-
-
-
-  @media (max-width: 576px) {
-    body {
-      background-image: url(mobile.svg);
-      height: 100%; /* Altura completa de la ventana */
-
+    #map {
+        position: relative;
+        content: center;
     }
-    .header-conteiner {
-        height: 10%;
-        margin-left: 2%;
-        margin-right: 2%;
+}
+/*media query tablet s */
+@media (max-width: 806px) {
+    .logo {
+        margin: 0;
+        font-size: 60%;
     }
-    #disable {
-        display: none;
-    }
-
-    .logo{
-        margin-right: 0;
-    }
-
-    .logo-icon{
-        width: 30px;
-        height: 30px;
+    .logo-icon {
+        width: 70px;
+        height: 70px;
     }
 
     .logo-text {
-        font-size: 125%;
+        font-size: 200%;
     }
+    nav {
+        font-size: 100%;
 
-    nav .custom-btn{
+    }
+}
+
+/* Media Queries  mobile */
+@media (max-width: 683px) {
+    body {
+        background-image: url(mobile.svg);
+    }
+    
+    #disable {
+        display: none;
+    }
+    .logo {
+        margin: 0;
+        gap: 10px;
+    }
+    .logo-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .logo-text {
+        font-size: 160%;
+    }
+    #lavanderia {
+        font-size: 110%;
+    }
+    nav {
+        margin-right: 4%;
+        font-size: 120%;
+    }
+    .custom-btn {
         padding: 5px 10px;
         margin: 10px;
-
+        font-size: 140%;
     }
-
     .hero {
-        margin: 5% 5% 5% 5%; /* Añade espacio entre el header y el contenido */
+        margin: 5% 5%; /* Añade espacio entre el header y el contenido */
         display: flex;
         flex-direction: column;
         justify-content: center; /* Centra horizontalmente el contenido */
         align-items: center; /* Centra verticalmente el contenido */
     }
-
     .abaut-container {
         flex-direction: row;
         gap: 20%;
     }
-    
     .abaut-text {
         font-size: smaller;
     }
+}
 
-  }
+/* media queries  mobile M */
+@media (max-width: 487px) {
+    .logo {
+        margin: 0;
+    }
+    .logo-icon {
+        width: 50px;
+        height: 50px;
+    }
+    .logo-text {
+        font-size: 160%;
+    }
+    nav{
+        font-size: 100%;
+    }
+    .custom-btn {
+        font-size: 130%;
+    }
+}
 
+/* Media Queries  mobile s */
+@media (max-width: 437px) {
 
+    .logo {
+        margin-left: 3px;
+    }
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .logo-text {
+        font-size: 140%;
+    }
+    nav{
+        font-size: 60%;
+    }
+    .custom-btn {
+        font-size: 130%;
+    }
+}

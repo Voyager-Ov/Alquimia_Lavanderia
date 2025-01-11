@@ -19,15 +19,29 @@ export class AppComponent {
     this.isPopupVisible = true;
   }
 
-  // Oculta el popup
-  closePopup() {
-    this.isPopupVisible = false;
+   // Oculta el popup con animación
+   closePopup() {
+    const overlay = document.querySelector('.popup-overlay');
+    const content = document.querySelector('.popup-content');
+    if (overlay && content) {
+      overlay.classList.add('hide');
+      content.classList.add('hide');
+      setTimeout(() => {
+        this.isPopupVisible = false;
+        overlay.classList.remove('hide');
+        content.classList.remove('hide');
+      }, 500); // Duración de la animación
+    } else {
+      this.isPopupVisible = false;
+    }
   }
 
   // Abre WhatsApp
-  openWhatsApp() {
-    window.open('https://wa.me/3884476453', '_blank'); // Cambia el número por el tuyo
-  }
+  // Abre WhatsApp con un mensaje predefinido
+openWhatsApp() {
+  const message = encodeURIComponent('Hola, me gustaría obtener más información sobre sus servicios.');
+  window.open(`https://wa.me/3883527777?text=${message}`, '_blank'); // Cambia el número por el tuyo
+}
 
   // Abre Gmail
   sendEmail() {
