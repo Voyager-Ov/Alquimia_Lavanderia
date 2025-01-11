@@ -9,7 +9,7 @@ Este proyecto es una **landing page profesional** diseñada para promover los se
 - **Angular**: Framework principal para el desarrollo frontend.
 - **CSS3**: Estilizado y personalización.
 - **Bootstrap**: Componentes y grillas responsivas.
-- **Hosting**: (Menciona aquí el servicio de hosting elegido, como Firebase Hosting o Netlify).
+
 
 ---
 
