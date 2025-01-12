@@ -10,6 +10,7 @@ body {
     background-attachment: fixed; /* Fija la imagen de fondo para que no se mueva */
     width: 100%;
     font-size: 120%;
+    padding-top: 12px;
 }
 
 /* Contenedor del header */
@@ -243,7 +244,76 @@ nav {
 
 .hero-content {
     text-align: center; /* Alinea el texto al centro */
+    font-size: 150%;
+    width: 1000px;
 }
+
+/* Estilos Services seccion */
+
+#services {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 50px 20px; /* Espaciado superior e inferior */
+    backdrop-filter: blur(10px); /* Difuminado del fondo */
+}
+#services .container {
+    margin: 0 auto;
+    text-align: center; /* Centra el texto */
+}
+
+#services h2 {
+    font-size: 2.5rem;
+    color: #2b502c; /* Verde oscuro acorde con el tema */
+    margin-bottom: 30px; /* Espaciado debajo del título */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+#services .row {
+    display: flex;
+    flex-wrap: wrap; /* Asegura que los elementos se adapten al espacio */
+    justify-content: space-between; /* Espaciado uniforme */
+    gap: 20px; /* Espacio entre columnas */
+}
+
+#services .col {
+    background: rgb(255, 255, 255, 0.5); /* Fondo semitransparente */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    flex: 1 1 calc(30% - 20px); /* Ajusta el tamaño para tres columnas */
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Animaciones suaves */
+}
+
+#services .col:hover {
+    transform: translateY(-10px); /* Eleva ligeramente el bloque */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+#services .col h3 {
+    font-size: 1.8rem;
+    color: #2b502c;
+    margin-bottom: 15px; /* Espacio debajo del subtítulo */
+}
+
+#services .col p {
+    font-size: 100%;
+    color: #444; /* Gris para contraste con el fondo */
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    #services .row {
+        flex-direction: column; /* Apila las columnas */
+        align-items: center; /* Centra los bloques */
+    }
+
+    #services .col {
+        flex: 1 1 100%; /* Ocupa todo el ancho */
+    }
+}
+
 
 /* Estilos para las islas en la sección About */
 .abaut-container {
