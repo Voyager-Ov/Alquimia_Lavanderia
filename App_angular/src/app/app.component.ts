@@ -79,25 +79,5 @@ openWhatsApp() {
         this.istagvisible = true;
     }
   }
-
-
-  // Formulario de contacto
-  
-  contactForm: FormGroup;
-  isSubmitting: boolean = false;
-  successMessage: string = '';
-  errorMessage: string = '';
-
-  constructor(private fb: FormBuilder) {
-    this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.maxLength(50)]],
-      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
-      message: ['', [Validators.required, Validators.maxLength(250)]],
-    });
-  }
-
-  onSubmit(): void {
-    console.log(this.contactForm.value);
-  }
   
 }
