@@ -1,45 +1,47 @@
-const express = require('express');
+require('dotenv').config();
 const nodemailer = require('nodemailer');
+const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-// Ruta para manejar el envío de correos
-app.post('/send-email', (req, res) => {
-    const { name, email, message } = req.body;
 
-    // Configuración del transporte de correo
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: 'your-email@gmail.com', // Reemplaza con tu correo
-            pass: 'your-email-password', // Reemplaza con tu contraseña
-        },
-    });
-
-    // Detalles del correo
-    const mailOptions = {
-        from: email,
-        to: 'your-email@gmail.com', // El correo que recibirá el mensaje
-        subject: `Nuevo mensaje de ${name}`,
-        text: message,
-    };
-
-    // Envío del correo
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error(error);
-            return res.status(500).send('Error al enviar el correo.');
-        }
-        res.status(200).send('Correo enviado correctamente.');
-    });
+// Configuración del transporte de correo
+const transporter = nodemailer.createTransport({
+  service: 'gmail', // Cambia según tu proveedor de correo
+  auth: {
+    user: process.env.EMAIL_USER, // Tu correo
+    pass: process.env.EMAIL_PASS,       // Contraseña o app password
+  },
 });
 
-// Iniciar el servidor
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`));
+// Ruta para recibir los datos del formulario
+app.post('/contact', (req, res) => {
+  const { name, email, message } = req.body;
+
+  const mailOptions = {
+    from: email,
+    to: 'alquimialavanderia2025@gmail.com', // Cambia a tu correo
+    subject: `Nuevo mensaje de ${name}`,
+    text: `Nombre: ${name}\nCorreo: ${email}\nMensaje: ${message}`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error al enviar el correo:', error);
+      res.status(500).send('Error al enviar el correo');
+    } else {
+      console.log('Correo enviado: ' + info.response);
+      res.status(200).send('Correo enviado con éxito');
+    }
+  });
+});
+
+// Inicia el servidor
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor iniciado en http://localhost:${PORT}`);
+});
