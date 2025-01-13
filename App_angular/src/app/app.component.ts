@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,15 +17,7 @@ export class AppComponent {
   title = 'Alquimia Lavandería';
   isPopupVisible = false; // Controla la visibilidad del popup
   istagvisible = false
-  contactForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.contactForm = this.fb.group({
-      name: ['', [Validators.required, Validators.maxLength(50)]],
-      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
-      message: ['', [Validators.required, Validators.maxLength(250)]]
-    });
-  }
 
   // Muestra el popup
   openPopup() {
@@ -86,14 +79,25 @@ openWhatsApp() {
         this.istagvisible = true;
     }
   }
+
+
   // Formulario de contacto
   
-  onSubmit() {
-    if (this.contactForm.valid) {
-      console.log(this.contactForm.value);
-      // Handle form submission
-      
-    }
+  contactForm: FormGroup;
+  isSubmitting: boolean = false;
+  successMessage: string = '';
+  errorMessage: string = '';
+
+  constructor(private fb: FormBuilder) {
+    this.contactForm = this.fb.group({
+      name: ['', [Validators.required, Validators.maxLength(50)]],
+      email: ['', [Validators.required, Validators.email, Validators.maxLength(100)]],
+      message: ['', [Validators.required, Validators.maxLength(250)]],
+    });
+  }
+
+  onSubmit(): void {
+    console.log(this.contactForm.value);
   }
   
 }
