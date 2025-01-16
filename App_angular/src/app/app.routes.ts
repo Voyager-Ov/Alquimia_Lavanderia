@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
-const routes: Routes = [
-  // Otras rutas...
-  { path: '**', component: NotFoundComponent }, // Ruta 404
+export const routes: Routes = [
+  // Definir tus rutas aquí
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
