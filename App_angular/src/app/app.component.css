@@ -17,7 +17,7 @@ body {
 /* Media Queries  tablet */
 @media (max-width: 961px) {
     body {
-        background-image: url(../assets/images/tablet.svg);
+        background-image: url(../../assets/images/tablet.svg);
     }
 }
 
@@ -25,6 +25,6 @@ body {
 /* Media Queries  mobile */
 @media (max-width: 683px) {
     body {
-        background-image: url(../assets/images/mobile.svg);
+        background-image: url(../../assets/images/mobile.svg);
     }
 }
