@@ -424,6 +424,9 @@
         position: relative;
         content: center;
     }
+    #imagen_planta img {
+        object-position: center -400px; /* Desplaza la imagen hacia arriba */
+    }
 }
 /*media query tablet s */
 @media (max-width: 806px) {
@@ -441,7 +444,6 @@
     }
     nav {
         font-size: 100%;
-
     }
 }
 
@@ -507,6 +509,10 @@
     .social-links a:hover {
         transform: scale(1.2);
         color: #037e44;
+    }
+
+    #imagen_planta img {
+        object-position: center -120px; /* Desplaza la imagen hacia arriba */
     }
     
 }
