@@ -64,6 +64,10 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
+#github {
+    color: black;
+}
+
 /* Media Queries  tablet */
 @media (max-width: 961px) {
     body {
