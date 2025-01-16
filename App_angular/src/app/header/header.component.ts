@@ -48,7 +48,7 @@ export class HeaderComponent {
   // Abre WhatsApp con un mensaje predefinido
 openWhatsApp() {
   const message = encodeURIComponent('Hola, me gustaría obtener más información sobre sus servicios.');
-  window.open(`https://wa.me/3883527777?text=${message}`, '_blank'); // Cambia el número por el tuyo
+  window.open(`https://wa.me/5493883527777?text=${message}`, '_blank'); // Cambia el número por el tuyo
 }
 
   // Abre Gmail
