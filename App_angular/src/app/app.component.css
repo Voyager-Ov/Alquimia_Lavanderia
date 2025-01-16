@@ -12,3 +12,19 @@ body {
     font-size: 120%;
     padding-top: 12px;
 }
+
+
+/* Media Queries  tablet */
+@media (max-width: 961px) {
+    body {
+        background-image: url(../../assets/images/tablet.svg);
+    }
+}
+
+
+/* Media Queries  mobile */
+@media (max-width: 683px) {
+    body {
+        background-image: url(../../assets/images/mobile.svg);
+    }
+}
