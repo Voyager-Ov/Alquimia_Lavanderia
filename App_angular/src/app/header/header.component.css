@@ -1,0 +1,382 @@
+
+/* Contenedor del header */
+.header-conteiner {
+    height: 10%; /* Altura del header */
+    margin-right: 5%;
+    margin-left: 5%;
+    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(213, 245, 204, 0.2));
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Espacio entre logo y nav */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin-left: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 180%;
+    margin-left: 10px;
+}
+
+.logo-icon {
+    width: 100px; /* Tamaño del logo */
+    height: 100px; /* Tamaño del logo */
+}
+
+.logo-text {
+    flex-direction: column; /* Coloca "ALQUIMIA" arriba y "lavanderia" abajo */
+    text-align: center; /* Alinea el texto al centro */
+}
+
+#Alquimia {
+    font-size: 160%; /* Tamaño grande para "ALQUIMIA" */
+    margin: 0; /* Elimina el margen */
+}
+
+#lavanderia {
+    font-size: 100%; /* Tamaño más pequeño para "lavanderia" */
+    margin: 0; /* Elimina el margen */
+}
+
+nav {
+    display: flex;
+    gap: 10px; /* Añade espacio entre los botones */
+    margin-right: 20px;
+}
+
+/* Estilos para los botones custom-btn */
+.custom-btn {
+    background-color: #005e2f83; /* Color de fondo */
+    color: rgba(217, 221, 193); /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Añade espacio dentro del botón */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para el color de fondo y la transformación */
+    font-weight: bold; /* Texto en negrita */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+}
+
+/* Estilos para el estado hover */
+.custom-btn:hover {
+    background-color: #037e4483; /* Color de fondo al pasar el cursor */
+    transform: translateY(-5px); /* Eleva el botón ligeramente */
+}
+
+/* Estilos para el estado activo */
+.custom-btn:active {
+    background-color: #037e4483; /* Color de fondo al hacer clic */
+    transform: translateY(0); /* Restaura la posición del botón */
+}
+
+/* Estilos para el estado enfocado */
+.custom-btn:focus {
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+    box-shadow: 0 0 0 3px #037e4483; /* Añade un borde de enfoque personalizado */
+}
+
+/* Estilos para el overlay del popup */
+.popup-overlay {
+    color: rgb(217, 221, 193);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
+    backdrop-filter: blur(10px); /* Difuminado del fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que el popup esté por encima de otros elementos */
+    animation: fadeIn 0.5s forwards; /* Animación de desvanecimiento */
+}
+
+.popup-overlay.hide {
+    animation: fadeOut 0.5s forwards; /* Animación de desvanecimiento inverso */
+}
+
+/* Estilos para el contenido del popup */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    background: #5e8a5a7c;
+    padding: 2% 10%; /* Añade espacio alrededor del contenido */
+    border-radius: 30px;
+    position: relative;
+    z-index: 1001; /* Asegura que el contenido del popup esté por encima del overlay */
+    animation: fadeIn 0.5s forwards; /* Animación de desvanecimiento */
+}
+
+.popup-content.hide {
+    animation: fadeOut 0.5s forwards; /* Animación de desvanecimiento inverso */
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.popup-content h2 {
+    color: white; /* Color del texto */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 10%;
+}
+
+.popup-content button {
+    padding: 10px 20px; /* Añade espacio dentro del botón */
+    border: none; /* Sin borde */
+    font-size: 150%;
+    border-radius: 15px; /* Bordes redondeados */
+    margin: 10px; /* Añade espacio entre los botones */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el icono y el texto */
+}
+
+#wapp {
+    background-color: #25d366; /* Color de fondo */
+    color: white; /* Color del texto */
+}
+
+#wapp:hover {
+    background-color: #03ff4fc4; /* Color de fondo al pasar el cursor */
+    transform: translateY(-3px); /* Eleva el botón ligeramente */
+}
+
+#wapp:active {
+    background-color: #03ff4fc4; /* Color de fondo al hacer clic */
+    transform: translateY(0); /* Restaura la posición del botón */
+}
+
+#email {
+    background-color: #ea4335; /* Color de fondo */
+    color: white; /* Color del texto */
+}
+
+#email:hover {
+    background-color: #f70000; /* Color de fondo al pasar el cursor */
+    transform: translateY(-3px); /* Eleva el botón ligeramente */
+}
+
+#email:active {
+    background-color: #ff4f4ffd; /* Color de fondo al hacer clic */
+    transform: translateY(0); /* Restaura la posición del botón */
+}
+
+#ig {
+    color: white; /* Color del texto */
+    background: linear-gradient(to right, #4b00fa, #833ab4, #c13584, #e1306c, #fd1d1d, #fdfa4b); /* Degradado de colores */
+    padding-left: 40px; /* Espacio a la izquierda para la imagen */
+}
+
+#ig:hover {
+    transform: translateY(-1px); /* Eleva el botón ligeramente */
+    animation: girar-gradiente 6s infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes girar-gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#closePopup {
+    color: white; /* Color del texto */
+    background-color: #ff4f4f; /* Color de fondo */
+}
+#closePopup:hover {
+    background-color: #f70000; /* Color de fondo al pasar el cursor */
+    transform: translateY(-3px); /* Eleva el botón ligeramente */
+}
+
+/* Media Queries  tablet */
+@media (max-width: 961px) {
+    body {
+        background-image: url(../../assets/images/tablet.svg);
+    }
+
+    .logo {
+        margin: 0;
+        font-size: 130%;
+    }
+    .logo-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    nav {
+        font-size: 130%;
+
+    }
+    .custom-btn {
+        font-size: 90%;
+        padding: 6px 5px;
+    }
+    .abaut-container {
+        flex-direction: column;
+    }
+    .abaut-text {
+        font-size: smaller;
+    }
+    #map {
+        position: relative;
+        content: center;
+    }
+}
+/*media query tablet s */
+@media (max-width: 806px) {
+    .logo {
+        margin: 0;
+        font-size: 60%;
+    }
+    .logo-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .logo-text {
+        font-size: 200%;
+    }
+    nav {
+        font-size: 100%;
+
+    }
+}
+
+/* Media Queries  mobile */
+@media (max-width: 683px) {
+    body {
+        background-image: url(../../assets/images/mobile.svg);
+    }
+    
+    #disable {
+        display: none;
+    }
+    .logo {
+        margin: 0;
+        gap: 10px;
+    }
+    .logo-icon {
+        width: 60px;
+        height: 60px;
+    }
+    .logo-text {
+        font-size: 160%;
+    }
+    #lavanderia {
+        font-size: 110%;
+    }
+    nav {
+        margin-right: 4%;
+        font-size: 120%;
+    }
+    .custom-btn {
+        padding: 5px 10px;
+        margin: 10px;
+        font-size: 140%;
+    }
+    .hero {
+        margin: 5% 5%; /* Añade espacio entre el header y el contenido */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+    }
+    .abaut-container {
+        flex-direction: row;
+        gap: 20%;
+    }
+    .abaut-text {
+        font-size: smaller;
+    }
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px; /* Espaciado entre los íconos */
+        margin-top: 10px;
+    }
+    
+    .social-links a {
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        transition: transform 0.3s ease;
+    }
+    
+    .social-links a:hover {
+        transform: scale(1.2);
+        color: #037e44;
+    }
+    
+}
+
+/* media queries  mobile M */
+@media (max-width: 487px) {
+    .logo {
+        margin: 0;
+    }
+    .logo-icon {
+        width: 50px;
+        height: 50px;
+    }
+    .logo-text {
+        font-size: 160%;
+    }
+    nav{
+        font-size: 100%;
+    }
+    .custom-btn {
+        font-size: 130%;
+    }
+}
+
+/* Media Queries  mobile s */
+@media (max-width: 437px) {
+
+    .logo {
+        margin-left: 3px;
+    }
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .logo-text {
+        font-size: 140%;
+    }
+    nav{
+        font-size: 60%;
+    }
+    .custom-btn {
+        font-size: 130%;
+    }
+}

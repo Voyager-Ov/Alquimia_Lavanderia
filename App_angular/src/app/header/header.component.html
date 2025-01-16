@@ -1,0 +1,41 @@
+<div class="header-conteiner">
+    <header class="header">
+        <div  class="logo">
+            <img src="logo_sfondo.png" alt="Logo" class="logo-icon">
+            <div class="logo-text">
+                <p id="Alquimia">ALQUIMIA</p>
+                <p id="lavanderia">Lavanderia</p>
+            </div>
+        </div>
+        <nav>
+            <button class="custom-btn" id="disable" (click)="scrollToAbout()">Sobre Nosotros</button>
+            <button class="custom-btn" id="disable" (click)="scrollToServices()">Servicios</button>
+            <!-- Botón para abrir el popup -->
+            <button class="custom-btn" (click)="openPopup()">Contáctanos</button>
+        </nav>
+    </header>
+</div>
+
+<!-- Popup -->
+<div *ngIf="isPopupVisible" class="popup-overlay" (click)="closePopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+        <h2>Contáctanos</h2>
+        <button id="wapp" (click)="openWhatsApp()">
+            <i class="bi bi-whatsapp"></i>
+            WhatsApp
+        </button>
+        <button id="email" (click)="sendEmail()">
+            <i class="bi bi-google"></i>
+            Gmail
+        </button>
+        <button id="ig" (click)="openInstagram()">
+            <i class="bi bi-instagram"> </i>
+                Instagram
+        </button>
+        <button id="closePopup" (click)="closePopup()">
+            Cerrar
+            <i class="bi bi-x-octagon"></i>
+        </button>
+    </div>
+</div>
+
